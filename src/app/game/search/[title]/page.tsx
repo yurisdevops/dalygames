@@ -3,10 +3,8 @@ import { GameCard } from "@/components/gameCard";
 import { Input } from "@/components/input";
 import { GameProps } from "@/utils/types/game";
 
-interface PropsParams {
-  params: {
-    title: string;
-  };
+interface Params {
+  title: string;
 }
 
 async function getData(title: string) {
@@ -23,8 +21,9 @@ async function getData(title: string) {
     throw new Error("Failed to fetch data");
   }
 }
-export default async function Search({ params }: PropsParams) {
-  const { title } = await params;
+export default async function Search({ params }: { params: Promise<Params> }) {
+  const resolvedParams = await params;
+  const title = resolvedParams.title;
 
   const games: GameProps[] = await getData(title);
 
