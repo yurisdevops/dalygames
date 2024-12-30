@@ -4,11 +4,15 @@ import Image from "next/image";
 import { Container } from "@/components/container";
 import { Label } from "./components/label";
 import { GameCard } from "@/components/gameCard";
+import { Metadata } from "next";
 
-interface Params {
-  id: string;
+interface PropsParams {
+  params: {
+    id: string;
+  };
 }
-async function getData(id: string) {
+
+const getData = async (id: string) => {
   try {
     const res = await fetch(
       `${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`,
@@ -20,7 +24,7 @@ async function getData(id: string) {
   } catch (error) {
     throw new Error("Failed to fetch data");
   }
-}
+};
 
 const getGameSorted = async () => {
   try {
@@ -34,9 +38,49 @@ const getGameSorted = async () => {
   }
 };
 
-export default async function Game({ params }: { params: Promise<Params> }) {
-  const resolvedParams = await params;
-  const id = resolvedParams.id;
+export async function generateMetadata({
+  params,
+}: PropsParams): Promise<Metadata> {
+  const { id } = await params;
+  try {
+    const response: GameProps = await fetch(
+      `${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`,
+      { next: { revalidate: 60 } }
+    )
+      .then((res) => res.json())
+      .catch(() => {
+        return {
+          title: "DalyGames - Descubra jogos incríveis para se divertir.",
+        };
+      });
+
+    return {
+      title: response.title,
+      description: `${response.description.slice(0, 100)}...`,
+      openGraph: {
+        title: response.title,
+        images: [response.image_url],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true,
+        },
+      },
+    };
+  } catch (err) {
+    return {
+      title: "DalyGames - Descubra jogos incríveis para se divertir.",
+    };
+  }
+}
+
+export default async function Game({ params }: PropsParams) {
+  const { id } = await params;
 
   const details: GameProps = await getData(id);
 
