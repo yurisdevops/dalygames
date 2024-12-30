@@ -18,9 +18,7 @@ const getData = async (id: string) => {
   try {
     const res = await fetch(
       `${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`,
-      {
-        next: { revalidate: 60 },
-      }
+      { cache: "no-store" }
     );
     return res.json();
   } catch (error) {
@@ -50,7 +48,7 @@ export async function generateMetadata({
   try {
     const response: GameProps = await fetch(
       `${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`,
-      { next: { revalidate: 60 } }
+      { cache: "no-store" }
     )
       .then((res) => res.json())
       .catch(() => {
@@ -73,7 +71,7 @@ export async function generateMetadata({
         googleBot: {
           index: true,
           follow: true,
-          noimageindex:true
+          noimageindex: true,
         },
       },
     };

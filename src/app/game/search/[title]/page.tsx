@@ -12,9 +12,7 @@ async function getData(title: string) {
     const decodeTitle = decodeURI(title);
     const res = await fetch(
       `${process.env.NEXT_API_URL}/next-api/?api=game&title=${decodeTitle}`,
-      {
-        next: { revalidate: 320 },
-      }
+      { cache: "no-store" }
     );
     return res.json();
   } catch (error) {

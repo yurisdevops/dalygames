@@ -11,7 +11,7 @@ const getDalyGame = async () => {
   try {
     const res = await fetch(
       `${process.env.NEXT_API_URL}/next-api/?api=game_day`,
-      { next: { revalidate: 60 } }
+      { cache: "no-store" }
     );
     return res.json();
   } catch (error) {
@@ -22,7 +22,7 @@ const getDalyGame = async () => {
 const getGamesData = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`, {
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
     return res.json();
   } catch (error) {
