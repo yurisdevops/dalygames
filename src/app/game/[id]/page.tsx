@@ -55,7 +55,7 @@ export async function generateMetadata({
       .then((res) => res.json())
       .catch(() => {
         return {
-          title: "DalyGames - Descubra jogos incríveis para se divertir.",
+          title: "DalyGames - Descubra jogos incríveis para se divertir!",
         };
       });
 
@@ -73,7 +73,7 @@ export async function generateMetadata({
         googleBot: {
           index: true,
           follow: true,
-          noimageindex: true,
+          noimageindex:true
         },
       },
     };
