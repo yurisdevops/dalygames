@@ -19,7 +19,7 @@ async function getDalyGame () {
   }
 }; 
 
-async function GamesData () {
+async function getGamesData () {
   try {
     const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`, {
       cache: "no-store",
