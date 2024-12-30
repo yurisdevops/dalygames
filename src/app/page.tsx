@@ -11,7 +11,7 @@ async function getDalyGame () {
   try {
     const res = await fetch(
       `${process.env.NEXT_API_URL}/next-api/?api=game_day`,
-      { cache: "no-store" }
+       { next: { revalidate: 320 } }
     );
     return res.json();
   } catch (error) {
@@ -21,9 +21,7 @@ async function getDalyGame () {
 
 async function getGamesData () {
   try {
-    const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`, {
-      cache: "no-store",
-    });
+    const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`,    { next: { revalidate: 320 } }  );
     return res.json();
   } catch (error) {
     throw new Error("Failed to fetch data");
