@@ -7,7 +7,7 @@ import { BsArrowRightSquare } from "react-icons/bs";
 import { Input } from "@/components/input";
 import { GameCard } from "@/components/gameCard";
 
-const getDalyGame = async () => {
+async function getDalyGame () {
   try {
     const res = await fetch(
       `${process.env.NEXT_API_URL}/next-api/?api=game_day`,
@@ -17,9 +17,9 @@ const getDalyGame = async () => {
   } catch (error) {
     throw new Error("Failed to fetch data");
   }
-};
+}; 
 
-const getGamesData = async () => {
+async function GamesData () {
   try {
     const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`, {
       cache: "no-store",
