@@ -92,7 +92,6 @@ Acesse a aplicação no navegador: [DalyGames](https://dalygames-pearl.vercel.ap
 
 ## Estrutura do Projeto
 
-- **node_modules** (dependências do projeto)
 - **public** (arquivos públicos)
 - **src**
   - **app**
@@ -104,14 +103,6 @@ Acesse a aplicação no navegador: [DalyGames](https://dalygames-pearl.vercel.ap
     - `page.tsx` (página inicial)
   - **components** (componentes reutilizáveis)
   - **utils** (arquivos utilitários e tipos)
-- `.env` (variáveis de ambiente)
-- `.gitignore` (arquivos e diretórios a serem ignorados pelo Git)
-- `next-env.d.ts` (tipagens do TypeScript para Next.js)
-- `next.config.ts` (configurações do Next.js)
-- `package-lock.json` (registro de dependências)
-- `package.json` (configurações do projeto e dependências)
-- `README.md` (documentação do projeto)
-- `tsconfig.json` (configurações do TypeScript)
 
 ## Contato
 
@@ -121,4 +112,3 @@ Desenvolvido por [Yuri Souza](https://github.com/yurisdevops). Entre em contato 
 
 ### 🎮 **Explore um vasto catálogo de jogos com DalyGames!**
 
----
