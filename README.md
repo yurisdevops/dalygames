@@ -110,5 +110,3 @@ Desenvolvido por [Yuri Souza](https://github.com/yurisdevops). Entre em contato 
 
 ---
 
-### 🎮 **Explore um vasto catálogo de jogos com DalyGames!**
-
