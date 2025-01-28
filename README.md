@@ -1,5 +1,3 @@
----
-
 # DalyGames
 
 > Plataforma web de catálogo de jogos.
