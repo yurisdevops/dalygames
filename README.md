@@ -79,7 +79,7 @@ Com `yarn`:
 yarn dev
 ```
 
-Acesse a aplicação no navegador: [DalyGames] (https://dalygames-pearl.vercel.app/).
+Acesse a aplicação no navegador: [DalyGames](https://dalygames-pearl.vercel.app/).
 
 ## Scripts Disponíveis
 
