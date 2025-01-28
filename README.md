@@ -1,8 +1,10 @@
+---
+
 # DalyGames
 
-> Plataforma web para gerenciamento de jogos diários.
+> Plataforma web de catálogo de jogos.
 
-O **DalyGames** é uma aplicação moderna desenvolvida com as últimas tecnologias do **Next.js**, focada em fornecer uma experiência simples e intuitiva para gerenciar jogos diários. O projeto inclui recursos avançados para a criação e gerenciamento de informações sobre jogos.
+O **DalyGames** é uma aplicação moderna desenvolvida com as últimas tecnologias do **Next.js**, focada em fornecer uma experiência intuitiva para explorar um catálogo de jogos. O projeto inclui recursos avançados para visualizar informações detalhadas sobre jogos.
 
 ## Índice
 
@@ -16,15 +18,17 @@ O **DalyGames** é uma aplicação moderna desenvolvida com as últimas tecnolog
 
 ## Descrição do Projeto
 
-O **DalyGames** permite criar, compartilhar e gerenciar informações sobre jogos diários de forma prática e segura. Ele oferece:
+O **DalyGames** é um catálogo que permite aos usuários visualizar informações detalhadas sobre diversos jogos usando uma API fake. Ele oferece:
 
-- Criação e gerenciamento de informações sobre jogos.
-- Interface moderna e responsiva para fácil navegação.
+- Um catálogo abrangente de jogos com dados variados.
+- Visualização detalhada de cada jogo, incluindo informações como gênero, plataforma, data de lançamento e sugestões de outros jogos relacionados.
+- Uma página de perfil fictícia onde os usuários podem adicionar até três jogos aos seus favoritos.
 
 ## Funcionalidades
 
-- **Gerenciamento de Jogos:** Criação, edição e exclusão de dados sobre jogos.
+- **Catálogo de Jogos:** Exibição detalhada de jogos com informações únicas.
 - **Interface Moderna:** Navegação responsiva com Tailwind CSS.
+- **Perfil Fictício:** Adição de até três jogos favoritos no perfil do usuário.
 
 ## Tecnologias Utilizadas
 
@@ -91,33 +95,17 @@ Acesse a aplicação no navegador: [DalyGames](https://dalygames-pearl.vercel.ap
 ## Estrutura do Projeto
 
 - **node_modules** (dependências do projeto)
-- **public**
-  - `favicon.ico`
+- **public** (arquivos públicos)
 - **src**
   - **app**
-    - **game**
-      - **[id]**
-        - **components**
-        - `layout`
-        - `page.tsx`
-    - **search**
-      - **[title]**
-        - `page.tsx`
-    - **profile**
-      - `components`
-      - `page.tsx`
-    - `favicon.ico`
-    - `globals.css`
-    - `layout.tsx`
-    - `page.tsx`
-  - **components**
-    - `container`
-    - `gameCard`
-    - `header`
-    - `input`
-  - **utils**
-    - **types**
-      - `game.ts`
+    - **game** (páginas de jogos)
+    - **search** (páginas de busca)
+    - **profile** (páginas de perfil)
+    - `globals.css` (estilos globais)
+    - `layout.tsx` (layout principal)
+    - `page.tsx` (página inicial)
+  - **components** (componentes reutilizáveis)
+  - **utils** (arquivos utilitários e tipos)
 - `.env` (variáveis de ambiente)
 - `.gitignore` (arquivos e diretórios a serem ignorados pelo Git)
 - `next-env.d.ts` (tipagens do TypeScript para Next.js)
@@ -133,6 +121,6 @@ Desenvolvido por [Yuri Souza](https://github.com/yurisdevops). Entre em contato 
 
 ---
 
-### 🎮 **Gerencie seus jogos diários de maneira simples e eficiente com o DalyGames!**
+### 🎮 **Explore um vasto catálogo de jogos com DalyGames!**
 
 ---
